@@ -19,12 +19,19 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                              <div class="form-group row">
-                                <div class="col-md-6 offset-md-3">
-                                    <a id="link" href="" class="btn btn-danger btn-block form-control mb-2" style="border-radius: 1.5rem">login with
-                                        google</a>
-                                    <a id="link" href="" class="btn btn-primary btn-block form-control mb-2" style="border-radius:1.5rem">login with
-                                        facebook</a>
-                                    <a id="link" href="" class="btn btn-dark btn-block form-control mb-2" style="border-radius:1.5rem">login with Github</a>
+                               <div class="col-md-6 offset-md-3">
+                                    <a id="link" href="{{route('login.google')}}" class="btn btn-danger btn-block form-control mb-2" style="border-radius: 1.5rem">
+                                        <i class="fab fa-google-plus"></i>
+                                        Login with google
+                                    </a>
+                                    <a id="link" href="{{route('login.facebook')}}" class="btn btn-primary btn-block form-control mb-2" style="border-radius:1.5rem">
+                                        <i class="fab fa-facebook"></i>
+                                        Login with facebook
+                                    </a>
+                                    <a id="link" href="{{route('login.github')}}" class="btn btn-dark btn-block form-control mb-2" style="border-radius:1.5rem">
+                                        <i class="fab fa-github"></i>
+                                        login with Github
+                                    </a>
                                 </div>
                             </div>
                             <div style="text-align: center" class="mb-3">QR</div>
