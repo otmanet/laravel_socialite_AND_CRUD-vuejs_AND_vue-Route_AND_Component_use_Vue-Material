@@ -40,6 +40,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
      // Google login
      public function redirectToGoogle()
      {
@@ -90,19 +91,19 @@ class LoginController extends Controller
      // Return home after login
      return redirect()->route('home');
      }
+       protected function _registerOrLoginUser($data)
+       {
+       $user = User::where('email', '=', $data->email)->first();
+       if (!$user) {
+       $user = new User();
+       $user->name = $data->name;
+       $user->email = $data->email;
+       $user->provider_id = $data->id;
+       $user->avatar = $data->avatar;
+       $user->save();
+       }
 
-     protected function _registerOrLoginUser($data)
-     {
-     $user = User::where('email', '=', $data->email)->first();
-     if (!$user) {
-     $user = new User();
-     $user->name = $data->name;
-     $user->email = $data->email;
-     $user->provider_id = $data->id;
-     $user->avatar = $data->avatar;
-     $user->save();
-     }
+       Auth::login($user);
+       }
 
-     Auth::login($user);
-     }
 }
