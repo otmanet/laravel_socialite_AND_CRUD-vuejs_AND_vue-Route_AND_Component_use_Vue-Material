@@ -32,3 +32,7 @@ Route::get('login/facebook/callback', [App\Http\Controllers\Auth\LoginController
 // Github login
 Route::get('login/github', [App\Http\Controllers\Auth\LoginController::class,'redirectToGithub'])->name('login.github');
 Route::get('login/github/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
+
+//Vuejs CRUD
+Route::get('/getCustomers',[App\Http\Controllers\CustomrsController::class,'index']);
+Route::delete('/deleteCustomer/{id}',[App\Http\Controllers\CustomrsController::class,'destory']);
