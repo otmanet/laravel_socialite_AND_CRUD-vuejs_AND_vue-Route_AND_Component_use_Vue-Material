@@ -34,5 +34,9 @@ Route::get('login/github', [App\Http\Controllers\Auth\LoginController::class,'re
 Route::get('login/github/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
 
 //Vuejs CRUD
-Route::get('/getCustomers',[App\Http\Controllers\CustomrsController::class,'index']);
-Route::delete('/deleteCustomer/{id}',[App\Http\Controllers\CustomrsController::class,'destory']);
+Route::get('/products',[App\Http\Controllers\Api\ProductController::class,'index']);
+Route::delete('/delete/product/{id}',[App\Http\Controllers\Api\ProductController::class,'destroy']);
+Route::post('/create/products',[App\Http\Controllers\Api\ProductController::class,'store']);
+Route::get('/edit/products/{id}',[App\Http\Controllers\Api\ProductController::class,'show']);
+Route::put('/update/products',[App\Http\Controllers\Api\ProductController::class,'update']);
+Route::get('/products/deleted',[App\Http\Controllers\Api\ProductController::class,'deleted']);

@@ -2,8 +2,12 @@
 
 @section('content')
 <style>
+    #link{
+        color:#ffff;
+        font-size: 25px;
+    
+    }
     #link:hover {
-
         transform:scale(1.3,1.3);
         -webkit-transform:scale(1.3,1.3);
         -moz-transform:scale(1.3,1.3)
@@ -21,16 +25,16 @@
     .svg-icon path,
     .svg-icon polygon,
     .svg-icon rect {
-    fill: #4691f6;
+    fill: #ffff;
     }
 
     .svg-icon circle {
-    stroke: #4691f6;
+    stroke: #ffff;
     stroke-width: 1;
     }
 </style>
-<div class="container" >
-    <div class="row justify-content-center" >
+<div class="container">
+    <div class="row justify-content-center mt-5" >
         <div class="col-md-8">
             <div class="card w-75" >
                 <div class="card-header" style="text-align: center; font-size: 25px">{{ __('Login') }}</div>
@@ -42,15 +46,15 @@
                             <div class="col-md-6 offset-md-3">
                                 <a id="link" href="{{route('login.google')}}" class="btn btn-danger btn-block form-control mb-2" style="border-radius: 1.5rem">
                               <i class="fab fa-google-plus"></i>
-                                    Login with google
+                                     google
                                 </a>
                                 <a id="link" href="{{route('login.facebook')}}" class="btn btn-primary btn-block form-control mb-2" style="border-radius:1.5rem">
                                    <i class="fab fa-facebook"></i>
-                                    Login with facebook
+                                    facebook
                                 </a>
                                 <a id="link" href="{{route('login.github')}}" class="btn btn-dark btn-block form-control mb-2" style="border-radius:1.5rem">
                                     <i class="fab fa-github"></i>
-                                    login with Github
+                                     Github
                                 </a>
                             </div>
                         </div>
